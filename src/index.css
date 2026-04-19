@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Poppins", "Open Sans", sans-serif;
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.ewert {
+  font-family: "Ewert", serif;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+.Ship {
+  display: flex;
+  width: max-content;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.about-reveal {
+  opacity: 0;
+  transform: translateY(-80px);
+  transition: opacity 1000ms ease, transform 1000ms ease;
+  will-change: opacity, transform;
+}
+
+.about-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
