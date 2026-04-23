@@ -19,8 +19,8 @@ const projects = [
     description: 'Full-featured commercial marketplace platform with product listings, vendor management, and transaction handling.',
     tech: ['React', 'Commerce', 'Platform'],
     image: commercialImg,
-    viewLink: '',
-    codeLink: ''
+    viewLink: 'https://muhammedmukrim.vercel.app/',
+    codeLink: 'https://github.com/muhammedmumu/Durga-frontend'
   },
 
   {
@@ -29,8 +29,8 @@ const projects = [
     description: 'Comprehensive admin dashboard with user management, analytics, and control panel features for easy administration.',
     tech: ['React', 'Dashboard', 'Admin'],
     image: adminPanelImg,
-    viewLink: '',
-    codeLink: ''
+    viewLink: 'https://mu-admin-dashboard.vercel.app',
+    codeLink: 'https://github.com/Kafeel-Ahamed/Metrial-UI-React'
   },
 
   {
@@ -39,8 +39,8 @@ const projects = [
     description: 'Real-time analytics dashboard with data visualization, charts, and performance metrics tracking.',
     tech: ['React', 'Charts', 'Analytics'],
     image: dashboardImg,
-    viewLink: '',
-    codeLink: ''
+    viewLink: 'https://products-dashboard-seven-nu.vercel.app',
+    codeLink: 'https://github.com/muhammedmumu/Simple-Dashboard'
   },
   {
     id: 4,
@@ -48,8 +48,8 @@ const projects = [
     description: 'Employee management system with attendance tracking, performance metrics, and HR functionalities.',
     tech: ['React', 'HR', 'Management'],
     image: employeeDashImg,
-    viewLink: '',
-    codeLink: ''
+    viewLink: 'https://ui-employee-dashboard.vercel.app',
+    codeLink: 'https://github.com/muhammedmumu/Tables'
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const projects = [
     description: 'Shop fashion, electronics, and home goods with fast delivery, secure checkout, and great customer support.',
     tech: ['React', 'E-commerce', 'Vercel'],
     image: ecommerceImg,
-    viewLink: 'https://e-commers-cwh5b3mro-muhammed-mukrims-projects.vercel.app/',
+    viewLink: 'https://e-commers-m.vercel.app',
     codeLink: 'https://github.com/muhammedmumu/E-commers'
   },
   {
@@ -66,7 +66,7 @@ const projects = [
     description: 'Event hosting and management platform with event creation, registration, and ticketing features.',
     tech: ['React', 'Events', 'Platform'],
     image: eventPageImg,
-    viewLink: '',
+    viewLink: 'https://event-registration-kappa.vercel.app',
     codeLink: ''
   }, {
     id: 7,
