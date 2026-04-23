@@ -117,6 +117,9 @@ export default function CubeSkillsSlider() {
     </div>
   )
 
+  const cubeSize = '20rem'
+  const cubeDepth = '10rem'
+
   return (
     <section className='rounded-2xl p-6'>
       <div className='flex flex-col items-center gap-7'>
@@ -140,33 +143,37 @@ export default function CubeSkillsSlider() {
 
         <div className='mt-1 [perspective:1750px]'>
           <div
-            className='relative h-[22rem] w-[22rem] transition-transform duration-700 [transform-style:preserve-3d]'
-            style={{ transform: `rotateY(${baseAngle + rotationStep}deg)` }}
+            className='relative mx-auto aspect-square transition-transform duration-700 [transform-style:preserve-3d]'
+            style={{
+              width: cubeSize,
+              height: cubeSize,
+              transform: `rotateY(${baseAngle + rotationStep}deg)`,
+            }}
           >
             <div
               className='absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/40 bg-[#ff4700]/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_30px_rgba(0,0,0,0.16)] backdrop-blur-lg'
-              style={{ transform: 'translateZ(176px)' }}
+              style={{ transform: `translateZ(${cubeDepth})` }}
             >
               {renderSlideIcons(faceSlides[0])}
             </div>
 
             <div
               className='absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/40 bg-[#ff4700]/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_30px_rgba(0,0,0,0.16)] backdrop-blur-lg'
-              style={{ transform: 'rotateY(90deg) translateZ(176px)' }}
+              style={{ transform: `rotateY(90deg) translateZ(${cubeDepth})` }}
             >
               {renderSlideIcons(faceSlides[1])}
             </div>
 
             <div
               className='absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/40 bg-[#ff4700]/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_30px_rgba(0,0,0,0.16)] backdrop-blur-lg'
-              style={{ transform: 'rotateY(180deg) translateZ(176px)' }}
+              style={{ transform: `rotateY(180deg) translateZ(${cubeDepth})` }}
             >
               {renderSlideIcons(faceSlides[2])}
             </div>
 
             <div
               className='absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-2xl border border-white/40 bg-[#ff4700]/35 shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_10px_30px_rgba(0,0,0,0.16)] backdrop-blur-lg'
-              style={{ transform: 'rotateY(-90deg) translateZ(176px)' }}
+              style={{ transform: `rotateY(-90deg) translateZ(${cubeDepth})` }}
             >
               {renderSlideIcons(faceSlides[3])}
             </div>

@@ -5,20 +5,54 @@ import ecommerceImg from '../../assets/project/E-commerce Website.png'
 import translatorImg from '../../assets/project/Language Translator.png'
 import netflixImg from '../../assets/project/Netflix-Clone.png'
 import enrollmentImg from '../../assets/project/Enrollment-Form.png'
+import adminPanelImg from '../../assets/project/AdminPanel.png'
+import commercialImg from '../../assets/project/Comersial.png'
+import dashboardImg from '../../assets/project/Dashboard.png'
+import employeeDashImg from '../../assets/project/Employe dash bord.png'
+import eventPageImg from '../../assets/project/EventPage.png'
 import noiseBg from '../../assets/Bg/noise.png'
 
 const projects = [
   {
     id: 1,
-    title: 'Portfolio Website',
-    description: "Personal portfolio website. Don't need much info about it, just scroll down. You're here only!",
-    tech: ['React', 'Tailwind', 'Portfolio'],
-    image: portfolioImg,
-    viewLink: '#',
+    title: 'Commercial Platform',
+    description: 'Full-featured commercial marketplace platform with product listings, vendor management, and transaction handling.',
+    tech: ['React', 'Commerce', 'Platform'],
+    image: commercialImg,
+    viewLink: '',
+    codeLink: ''
+  },
+
+  {
+    id: 2,
+    title: 'Admin Panel',
+    description: 'Comprehensive admin dashboard with user management, analytics, and control panel features for easy administration.',
+    tech: ['React', 'Dashboard', 'Admin'],
+    image: adminPanelImg,
+    viewLink: '',
+    codeLink: ''
+  },
+
+  {
+    id: 3,
+    title: 'Analytics Dashboard',
+    description: 'Real-time analytics dashboard with data visualization, charts, and performance metrics tracking.',
+    tech: ['React', 'Charts', 'Analytics'],
+    image: dashboardImg,
+    viewLink: '',
     codeLink: ''
   },
   {
-    id: 2,
+    id: 4,
+    title: 'Employee Dashboard',
+    description: 'Employee management system with attendance tracking, performance metrics, and HR functionalities.',
+    tech: ['React', 'HR', 'Management'],
+    image: employeeDashImg,
+    viewLink: '',
+    codeLink: ''
+  },
+  {
+    id: 5,
     title: 'E-commerce Website',
     description: 'Shop fashion, electronics, and home goods with fast delivery, secure checkout, and great customer support.',
     tech: ['React', 'E-commerce', 'Vercel'],
@@ -27,16 +61,15 @@ const projects = [
     codeLink: 'https://github.com/muhammedmumu/E-commers'
   },
   {
-    id: 3,
-    title: 'Language Translator',
-    description: 'User-friendly translator web app using Google Translate API with responsive design in HTML, CSS, JavaScript.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'API'],
-    image: translatorImg,
-    viewLink: 'https://muhammedmumu.github.io/Language/',
-    codeLink: 'https://github.com/muhammedmumu/Language'
-  },
-  {
-    id: 4,
+    id: 6,
+    title: 'Event Management',
+    description: 'Event hosting and management platform with event creation, registration, and ticketing features.',
+    tech: ['React', 'Events', 'Platform'],
+    image: eventPageImg,
+    viewLink: '',
+    codeLink: ''
+  }, {
+    id: 7,
     title: 'Netflix-Clone',
     description: 'Built a responsive Netflix clone using HTML and CSS, showcasing sleek UI and strong design skills.',
     tech: ['HTML', 'CSS', 'Clone UI'],
@@ -45,14 +78,31 @@ const projects = [
     codeLink: 'https://github.com/muhammedmumu/Netflix'
   },
   {
-    id: 5,
+    id: 8,
+    title: 'Language Translator',
+    description: 'User-friendly translator web app using Google Translate API with responsive design in HTML, CSS, JavaScript.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'API'],
+    image: translatorImg,
+    viewLink: 'https://muhammedmumu.github.io/Language/',
+    codeLink: 'https://github.com/muhammedmumu/Language'
+  },
+
+
+
+
+
+  {
+    id: 9,
     title: 'Enrollment-Form',
     description: 'Developed a responsive enrollment form with secure payment integration using HTML, CSS, and Bootstrap.',
     tech: ['HTML', 'CSS', 'Bootstrap'],
     image: enrollmentImg,
     viewLink: '',
     codeLink: ''
-  }
+  },
+
+
+
 ]
 
 function ProjectCard({ project }) {
