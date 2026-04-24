@@ -174,7 +174,7 @@ export default function Project() {
   return (
     <div
       id='projects'
-      className='relative w-screen min-h-screen px-6 py-24 md:px-10'
+      className='relative w-screen min-h-screen px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24'
       style={{
         backgroundColor: 'rgb(255, 240, 224)',
         backgroundImage: `url(${noiseBg})`,
@@ -190,7 +190,7 @@ export default function Project() {
       <div className='relative z-10 mx-auto max-w-7xl'>
         {/* Section Header */}
         <div className='mb-16 space-y-4 text-center'>
-          <h2 className='text-4xl md:text-5xl font-bold text-white'
+          <h2 className='text-3xl font-bold text-white sm:text-4xl lg:text-5xl'
             style={{
               fontFamily: 'Mori, sans-serif',
               fontWeight: 600,
@@ -201,7 +201,7 @@ export default function Project() {
             Featured <span className='text-transparent bg-clip-text bg-[#ff4700]'>Projects</span>
           </h2>
           <p
-            className='mx-auto max-w-2xl text-base md:text-lg'
+            className='mx-auto max-w-2xl text-sm sm:text-base lg:text-lg'
 
           >
             A collection of projects showcasing my skills in web development, design, and problem-solving across frontend and backend technologies.

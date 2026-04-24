@@ -50,3 +50,27 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.home-mobile-balance {
+  background: #076585;
+}
+
+.home-mobile-hero {
+  background: #ff4700;
+}
+
+.about-mobile-balance {
+  background: linear-gradient(180deg, #076585 0%, #fff 100%);
+}
+
+@media (max-width: 639px) {
+  .home-mobile-balance {
+    background: linear-gradient(180deg, #ff4700 0%, #ff4700 75%, #076585 75%, #076585 100%);
+  }
+
+  .home-mobile-hero {
+    background: linear-gradient(180deg, #ff4700 0%, #ff4700 75%, #076585 75%, #076585 100%);
+  }
+
+
+}

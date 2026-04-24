@@ -26,10 +26,10 @@ export default function Name() {
   }, []);
 
   return (
-    <div className="flex items-center  justify-center mt-20 p-8 ">
-      <h1 className=" ewert stretch-y flex text-white text-center  leading-[12rem] items-center justify-center text-8xl  font-semibold select-none z-0">
+    <div className='mt-12 flex items-center justify-center p-4 sm:mt-16 sm:p-6 lg:mt-20 lg:p-8'>
+      <h1 className='ewert stretch-y z-0 flex select-none items-center justify-center text-center text-4xl font-semibold leading-tight text-white sm:text-6xl sm:leading-[5.5rem] lg:text-8xl lg:leading-[8rem]'>
         {items[currentIndex].name}
       </h1>
     </div>
-  );
+  )
 }

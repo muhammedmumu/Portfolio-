@@ -30,12 +30,12 @@ export default function Left() {
 
   return (
     <>
-      <div ref={containerRef} className={`ml-10 w-1/2 flex h-full flex-col items-start justify-center gap-4 about-reveal ${isVisible ? 'about-reveal-visible' : ''}`}>
+      <div ref={containerRef} className={`about-reveal flex h-full w-full flex-col items-start justify-center gap-4 sm:gap-5 lg:ml-10 lg:w-1/2 ${isVisible ? 'about-reveal-visible' : ''}`}>
         <img
           src={luffyImg}
           alt='Luffy'
           draggable={false}
-          className='h-auto w-28 md:w-32 -mb-2'
+          className='-mb-2 h-auto w-24 sm:w-28 lg:w-32'
         />
         <div className='flex rounded-full border border-[#FF8B06]/40 bg-black px-1 py-1'>
           <h1 className="px-4 text-2xl font-normal leading-none text-[#d4af7f]">
@@ -44,7 +44,7 @@ export default function Left() {
         </div>
         <div className='about-content text-start'>
           <h1
-            className="w-3/4 text-4xl text-start"
+            className='w-full text-start text-3xl sm:w-4/5 sm:text-4xl lg:w-3/4'
             style={{
               fontFamily: 'Mori, sans-serif',
               fontWeight: 600,

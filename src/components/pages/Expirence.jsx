@@ -1,9 +1,9 @@
 import React from 'react'
 import { experiences } from '../../data/experiences'
-import portfolioImg from '../../assets/Screenshot 2026-04-04 170443.png'
-import ecommerceImg from '../../assets/project/E-commerce Website.png'
+import brainImg from '../../assets/Bg/Appliced.jpg'
+import cubeImg from '../../assets/Bg/CubeC.jpg'
 
-const defaultExperienceImages = [portfolioImg, ecommerceImg]
+const defaultExperienceImages = [brainImg, cubeImg]
 
 function ExperienceCard({ experience, image, index }) {
   const role = experience?.left?.jobTitle ?? 'SOFTWARE ENGINEER'
@@ -13,8 +13,8 @@ function ExperienceCard({ experience, image, index }) {
 
   return (
     <article className='group flex flex-col gap-5'>
-      <div className='relative overflow-hidden border border-white/20 bg-[#111111] p-4 md:p-5'>
-        <div className='relative h-44 overflow-hidden border border-white/15 bg-slate-900 md:h-52'>
+      <div className='relative overflow-hidden border border-white/20 bg-[#111111] p-4 sm:p-5 lg:p-6'>
+        <div className='relative h-40 overflow-hidden border border-white/15 bg-slate-900 sm:h-44 lg:h-52'>
           <img
             src={image}
             alt={`${role} background`}
@@ -26,8 +26,8 @@ function ExperienceCard({ experience, image, index }) {
 
         <div className='mt-4 space-y-1'>
           <p className='text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300'>Experience {index + 1}</p>
-          <h3 className='text-xl font-bold leading-tight text-white md:text-2xl'>{role}</h3>
-          <p className='text-sm font-semibold text-slate-300 md:text-base'>{company}</p>
+          <h3 className='text-lg font-bold leading-tight text-white sm:text-xl lg:text-2xl'>{role}</h3>
+          <p className='text-sm font-semibold text-slate-300 sm:text-base'>{company}</p>
           {summary ? <p className='pt-2 text-sm leading-relaxed text-slate-400'>{summary}</p> : null}
         </div>
       </div>
@@ -38,7 +38,7 @@ function ExperienceCard({ experience, image, index }) {
           {tools.map((tool) => (
             <span
               key={`${role}-${tool}`}
-              className='border border-cyan-300/35 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-100 md:text-sm'
+              className='border border-cyan-300/35 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-100 sm:text-sm'
             >
               {tool}
             </span>
@@ -51,14 +51,14 @@ function ExperienceCard({ experience, image, index }) {
 
 export default function Experience() {
   return (
-    <section id='experience' className='w-screen min-h-screen  px-6 py-20 md:px-10 md:py-24'
+    <section id='experience' className='w-screen min-h-screen px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-24'
       style={{
         background: 'linear-gradient(90deg,  #ff4700 50%, rgb(15, 15, 15) 50%)',
       }}>
       <div className='mx-auto max-w-7xl'>
-        <header className='mb-12 text-center md:mb-14'>
-          <h2 className='text-4xl font-bold text-white md:text-5xl'>Experience</h2>
-          <p className='mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 md:text-base'>
+        <header className='mb-10 text-center sm:mb-12 lg:mb-14'>
+          <h2 className='text-3xl font-bold text-white sm:text-4xl lg:text-5xl'>Experience</h2>
+          <p className='mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base'>
             A showcase of my professional journey, highlighting key roles, responsibilities, and the tools I've mastered along the way.
           </p>
         </header>

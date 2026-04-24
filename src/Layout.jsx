@@ -17,10 +17,8 @@ export default function Layout() {
     { id: 'contact', label: 'CONTACT' },
   ]
 
-  const leftSections = sections.slice(0, 3)
-  const rightSections = sections.slice(3, 6)
-
   const [activeSection, setActiveSection] = useState('home')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const sectionElements = sections
@@ -63,45 +61,87 @@ export default function Layout() {
     if (sectionElement) {
       sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+    setMobileMenuOpen(false)
   }
 
   const centerTitle = sections.find((section) => section.id === activeSection)?.label || 'HOME'
+  const leftSections = sections.slice(0, 3)
+  const rightSections = sections.slice(3)
 
   return (
     <div className='overflow-x-hidden'>
-      <nav className='fixed top-0 left-0 z-50 w-full bg-[#ff4700] px-4 py-3 shadow-md'>
-        <div className='mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4'>
-          <ul className='flex items-center gap-3 text-sm md:gap-6 md:text-base'>
-            {leftSections.map((section) => (
-              <li key={`left-${section.id}`}>
-                <button
-                  type='button'
-                  onClick={() => scrollToSection(section.id)}
-                  className={`transition duration-200 ${activeSection === section.id ? 'font-bold text-white' : 'text-gray-100 hover:text-white'}`}
-                >
-                  {section.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+      <nav className='fixed top-0 left-0 z-50 w-full bg-[#ff4700] px-3 py-2 shadow-md sm:px-4 sm:py-3 lg:px-6 lg:py-4'>
+        <div className='mx-auto max-w-6xl'>
+          <div className='relative flex items-center justify-between lg:hidden'>
+            <div className='w-10' />
+            <h1 className='text-center text-white text-2xl font-bold text-black ewert sm:text-xl'>
+              --- {centerTitle} ---
+            </h1>
+            <button
+              type='button'
+              aria-label='Toggle menu'
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              className='flex h-10 w-10 items-center justify-center rounded-full border border-black/15 bg-white/20 text-black transition hover:bg-white/30'
+            >
+              <span className='flex flex-col gap-1.5'>
+                <span className='h-0.5 w-5 rounded-full bg-black' />
+                <span className='h-0.5 w-5 rounded-full bg-black' />
+                <span className='h-0.5 w-5 rounded-full bg-black' />
+              </span>
+            </button>
 
-          <h1 className='text-lg font-bold text-white md:text-2xl ewert'>
-            --- {centerTitle} ---
-          </h1>
+            {mobileMenuOpen ? (
+              <div className='absolute right-0 top-full mt-2 w-52 rounded-2xl border border-black/10 bg-white p-3 shadow-xl'>
+                <div className='grid grid-cols-1 gap-2 text-center text-sm font-semibold'>
+                  {sections.map((section) => (
+                    <button
+                      key={section.id}
+                      type='button'
+                      onClick={() => scrollToSection(section.id)}
+                      className={`rounded-xl px-3 py-2 transition duration-200 ${activeSection === section.id ? 'bg-[#ff4700] text-white' : 'text-slate-700 hover:bg-slate-100'}`}
+                    >
+                      {section.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </div>
 
-          <ul className='flex items-center justify-end gap-3 text-sm md:gap-6 md:text-base'>
-            {rightSections.map((section) => (
-              <li key={`right-${section.id}`}>
-                <button
-                  type='button'
-                  onClick={() => scrollToSection(section.id)}
-                  className={`transition duration-200 ${activeSection === section.id ? 'font-bold text-white' : 'text-gray-100 hover:text-white'}`}
-                >
-                  {section.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div className='hidden items-center gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center'>
+            <ul className='flex items-center gap-6 text-base'>
+              {leftSections.map((section) => (
+                <li key={`left-${section.id}`}>
+                  <button
+                    type='button'
+                    onClick={() => scrollToSection(section.id)}
+                    className={`transition duration-200 ${activeSection === section.id ? 'font-bold text-white' : 'text-gray-100 hover:text-white'}`}
+                  >
+                    {section.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            <h1 className='text-center text-2xl font-bold text-white ewert'>
+              --- {centerTitle} ---
+            </h1>
+
+            <ul className='flex items-center justify-end gap-6 text-base'>
+              {rightSections.map((section) => (
+                <li key={`right-${section.id}`}>
+                  <button
+                    type='button'
+                    onClick={() => scrollToSection(section.id)}
+                    className={`transition duration-200 ${activeSection === section.id ? 'font-bold text-white' : 'text-gray-100 hover:text-white'}`}
+                  >
+                    {section.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
 

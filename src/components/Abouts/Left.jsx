@@ -32,7 +32,7 @@ export default function Left() {
   return (
 
     <>
-      <div ref={containerRef} className={`left p-8 flex flex-col h-full items-start justify-start about-reveal ${isVisible ? 'about-reveal-visible' : ''}`}>
+      <div ref={containerRef} className={`left flex h-full w-full flex-col items-center justify-start gap-5 p-4 text-center about-reveal sm:p-6 lg:items-start lg:text-left lg:p-8 ${isVisible ? 'about-reveal-visible' : ''}`}>
         <AboutName />
         <Projs />
 

@@ -20,7 +20,6 @@ import {
   Bootstrap,
 
 } from '../../assets/SkillsSets'
-import ViteLogo from '../../assets/vite.svg'
 
 export default function CubeSkillsSlider() {
   const [index, setIndex] = useState(0)
@@ -69,7 +68,7 @@ export default function CubeSkillsSlider() {
         { name: 'Git', icon: Git, className: 'col-start-1 row-start-1' },
         { name: 'GitHub', icon: Social, className: 'col-start-3 row-start-1' },
         { name: 'GitLab', icon: Gitlab, className: 'col-start-2 row-start-2' },
-        { name: 'Vite', icon: ViteLogo, className: 'col-start-1 row-start-3' },
+        { name: 'Vite', icon: TypeScript, className: 'col-start-1 row-start-3' },
         { name: 'Storybook', icon: Storybook, className: 'col-start-3 row-start-3' },
       ],
       gridClass: 'grid h-[11.5rem] w-[11.5rem] grid-cols-3 grid-rows-3',

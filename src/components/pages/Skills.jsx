@@ -7,7 +7,7 @@ export default function SkillsPage() {
     <>
       <div
         id='skills'
-        className='min-h-screen w-screen scroll-mt-24 justify-center flex gap-8 px-6 md:px-10 py-10 md:py-16'
+        className='flex min-h-screen w-screen scroll-mt-24 justify-center gap-6 px-4 py-10 sm:gap-8 sm:px-6 sm:py-12 lg:px-10 lg:py-16'
         style={{
           background: 'rgb(255, 255, 255)',
           backgroundImage: `url(${pattern})`,

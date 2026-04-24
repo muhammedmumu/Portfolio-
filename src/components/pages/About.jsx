@@ -8,13 +8,25 @@ import {
 
 export default function About() {
   return (
-    <div id='about' className='About relative flex flex-col w-screen min-h-screen scroll-mt-24 overflow-hidden' style={{
-      background: 'linear-gradient(180deg, #076585 0%, #fff 100%)'
-    }}>
+    <div
+      id='about'
+      className='About about-mobile-balance relative flex min-h-screen w-screen flex-col scroll-mt-24 overflow-hidden'
+    >
       {/* SVG Wave - Positioned at top for continuity */}
       <div className='absolute top-0 left-0 w-full'>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className='w-full'>
-          <path fill="#076585" fillOpacity="1" d="M0,224L48,234.7C96,245,192,267,288,250.7C384,235,480,181,576,170.7C672,160,768,192,864,218.7C960,245,1056,267,1152,250.7C1248,235,1344,181,1392,154.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+          <path
+            className='sm:hidden'
+            fill="#076585"
+            fillOpacity="1"
+            d="M0,224L48,234.7C96,245,192,267,288,250.7C384,235,480,181,576,170.7C672,160,768,192,864,218.7C960,245,1056,267,1152,250.7C1248,235,1344,181,1392,154.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+          <path
+            className='hidden sm:block'
+            fill="#076585"
+            fillOpacity="1"
+            d="M0,224L48,234.7C96,245,192,267,288,250.7C384,235,480,181,576,170.7C672,160,768,192,864,218.7C960,245,1056,267,1152,250.7C1248,235,1344,181,1392,154.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
         </svg>
       </div>
 
@@ -29,9 +41,9 @@ export default function About() {
       </div>
 
       {/* Content - Centered */}
-      <div className='flex relative flex-1 flex-col md:flex-row gap-6 md:gap-8 items-center justify-center z-10 px-6 md:px-10 pt-24 md:pt-28 pb-10'>
-        <div className="left w-full md:w-1/2 max-w-2xl"><Left /></div>
-        <div className="right p-4 md:p-8 w-full md:w-1/2 max-w-2xl"><Right /></div>
+      <div className='relative z-10 flex flex-1 flex-col items-center justify-center gap-6 px-4 pt-20 pb-10 sm:gap-8 sm:px-6 sm:pt-24 lg:flex-row lg:px-10 lg:pt-28'>
+        <div className='left w-full max-w-2xl lg:w-1/2'><Left /></div>
+        <div className='right w-full max-w-2xl p-2 sm:p-4 lg:w-1/2 lg:p-8'><Right /></div>
       </div>
     </div>
   )
