@@ -9,7 +9,7 @@ export default function Home() {
         <div className='flex h-1/2 items-center justify-center px-4'>
           <Name />
         </div>
-        <div className='absolute left-1/2 top-[70%] z-10 w-[100vw] max-w-[28rem] -translate-x-1/2 -translate-y-1/2 sm:w-[68vw] sm:max-w-[34rem] lg:top-[70%] lg:w-[54vw] lg:max-w-[46rem] xl:w-[48vw] xl:max-w-[62rem]'>
+        <div className='absolute left-1/2 top-[60%] z-10 w-[100vw] max-w-[28rem] -translate-x-1/2 -translate-y-1/2 sm:w-[68vw] sm:max-w-[34rem] lg:top-[70%] lg:w-[54vw] lg:max-w-[46rem] xl:w-[48vw] xl:max-w-[62rem]'>
           <img className='Ship relative z-10 mt-10 w-full object-contain sm:mt-14 lg:mt-8'
             src={Sunny}
             alt='Sunny'
