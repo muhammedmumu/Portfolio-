@@ -5,21 +5,61 @@ import cubeImg from '../../assets/Bg/CubeC.jpg'
 
 const defaultExperienceImages = [brainImg, cubeImg]
 
+const internshipModalContent = {
+  companyName: 'Infomatic Solutions',
+  role: 'Software enginerring',
+  duration: '6 Months Journey',
+  details:
+    'I started my internship by focusing on building a strong frontend foundation and then progressed to delivering production-level work in a real project environment.',
+  phases: [
+    {
+      title: 'Phase 1 - Learning & Foundation',
+      description:
+        'I started my internship by focusing on building a strong frontend foundation using HTML, CSS, React, and Material UI. During this phase, I explored component-based development and learned how to create clean and reusable UI elements. I also got introduced to Storybook, which helped me understand how to document and showcase components effectively. This phase helped me gain confidence and clarity in building real-world interfaces.',
+      showcaseTitle: 'What I Built (Showcase)',
+      showcase: ['Dashboard UI (Material UI)', 'Reusable components', 'Storybook setup'],
+      cta: {
+        label: 'View Projects',
+        href: '#projects',
+      },
+    },
+    {
+      title: 'Phase 2 - Real Project / Production',
+      description:
+        'After building a solid foundation, I moved into working on a real-world project for a non-profit organization. I worked as the sole frontend developer, where I built the application from scratch and focused on creating reusable components and maintaining consistency across the UI. This phase helped me understand real project workflows, improve my problem-solving skills, and work independently on production-level code.',
+      learnedTitle: 'What I Learned',
+      learned: [
+        'Real-world project structure',
+        'Writing scalable components',
+        'API integration',
+        'Working independently',
+        'Improving performance & UI consistency',
+      ],
+    },
+  ],
+  closingLine:
+    'This journey helped me grow from learning the basics to confidently building real-world applications.',
+}
+
 function ExperienceCard({ experience, image, index, onCardClick }) {
   const role = experience?.left?.jobTitle ?? 'SOFTWARE ENGINEER'
   const company = experience?.left?.companyName ?? 'Company Name'
   const tools = experience?.left?.tools ?? []
   const summary = experience?.slogan ?? ''
-
-  return (
-    <article className='group flex flex-col gap-5' onClick={() => onCardClick({
+  const isInfomaticExperience = company.toLowerCase().includes('infomatic')
+  const modalPayload = isInfomaticExperience
+    ? internshipModalContent
+    : {
       title: `${company} - ${role}`,
       shortDescription: summary,
       details: experience?.details ?? 'Detailed information about the experience.',
       features: experience?.features ?? ['Feature 1', 'Feature 2'],
       technologies: tools,
       links: experience?.links ?? [],
-    })}>
+    }
+
+  return (
+    <article className='group flex flex-col gap-5' onClick={() => onCardClick(modalPayload)}>
       <div className='relative overflow-hidden border border-white/20 bg-[#111111] p-4 sm:p-5 lg:p-6'>
         <div className='relative h-40 overflow-hidden border border-white/15 bg-slate-900 sm:h-44 lg:h-52'>
           <img

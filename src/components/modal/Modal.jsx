@@ -33,6 +33,8 @@ const Modal = ({ isOpen, onClose, content }) => {
   const whatWasDone = Array.isArray(safeContent.features) ? safeContent.features : [];
   const technologies = Array.isArray(safeContent.technologies) ? safeContent.technologies : [];
   const links = Array.isArray(safeContent.links) ? safeContent.links : [];
+  const phases = Array.isArray(safeContent.phases) ? safeContent.phases : [];
+  const closingLine = safeContent.closingLine || '';
 
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains('modal-overlay')) {
@@ -72,6 +74,69 @@ const Modal = ({ isOpen, onClose, content }) => {
             <p>{messageFromKing}</p>
           </div>
 
+          {phases.length ? (
+            <>
+              {phases.map((phase, index) => {
+                const phaseShowcase = Array.isArray(phase.showcase) ? phase.showcase : [];
+                const phaseLearned = Array.isArray(phase.learned) ? phase.learned : [];
+                const cta = phase.cta || null;
+
+                return (
+                  <React.Fragment key={`${phase.title || 'phase'}-${index}`}>
+                    <div className="royal-divider royal-divider-thin" />
+
+                    <div className="modal-details">
+                      <h3>{phase.title}</h3>
+                      {phase.description ? <p>{phase.description}</p> : null}
+                    </div>
+
+                    {phaseShowcase.length ? (
+                      <div className="modal-features">
+                        <h3>{phase.showcaseTitle || 'What I Built (Showcase)'}</h3>
+                        <ul>
+                          {phaseShowcase.map((item, itemIndex) => (
+                            <li key={`showcase-${index}-${itemIndex}`}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+
+                    {cta?.label && cta?.href ? (
+                      <div className="modal-links">
+                        <div className="modal-link-grid">
+                          <a
+                            href={cta.href}
+                            target={cta.href.startsWith('#') ? undefined : '_blank'}
+                            rel={cta.href.startsWith('#') ? undefined : 'noopener noreferrer'}
+                            className="royal-link"
+                            onClick={() => {
+                              if (cta.href.startsWith('#')) {
+                                onClose();
+                              }
+                            }}
+                          >
+                            {cta.label}
+                          </a>
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {phaseLearned.length ? (
+                      <div className="modal-features">
+                        <h3>{phase.learnedTitle || 'What I Learned'}</h3>
+                        <ul>
+                          {phaseLearned.map((item, itemIndex) => (
+                            <li key={`learned-${index}-${itemIndex}`}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+                  </React.Fragment>
+                );
+              })}
+            </>
+          ) : null}
+
           <div className="royal-divider royal-divider-thin" />
 
           <div className="modal-features">
@@ -107,7 +172,17 @@ const Modal = ({ isOpen, onClose, content }) => {
             </div>
           ) : null}
 
-          <footer className="modal-stamp">Approved by the Royal Court</footer>
+          {closingLine ? (
+            <>
+              <div className="royal-divider royal-divider-thin" />
+              <div className="modal-details">
+
+                <p>{closingLine}</p>
+              </div>
+            </>
+          ) : null}
+
+          <footer className="modal-stamp">Thank you</footer>
         </div>
       </div>
     </div>
