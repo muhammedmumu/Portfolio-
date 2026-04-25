@@ -102,7 +102,7 @@ export default function Footer() {
         <div className='border-t border-white/10 pt-6'>
           {/* Credit Line */}
           <h2 className='text-center text-sm text-slate-300'>
-            Designed with{' '}
+            Designed {' '}
             <i className='fas fa-heart text-red-500 animate-pulse'></i> by{' '}
             <a
               href='https://www.linkedin.com/in/mukrimm/'

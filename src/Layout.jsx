@@ -183,7 +183,7 @@ export default function Layout() {
           { label: 'GitHub', url: 'https://github.com' },
         ],
       })}>
-        Open Modal
+
       </button>
 
       <div className="project-card" onClick={() => openModal({
@@ -197,7 +197,7 @@ export default function Layout() {
           { label: 'GitHub', url: 'https://github.com/example' },
         ],
       })}>
-        Applied Informatic Solution
+
       </div>
 
       <Modal isOpen={isModalOpen} onClose={closeModal} content={modalContent} />
