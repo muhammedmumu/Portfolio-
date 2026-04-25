@@ -36,10 +36,10 @@ const projects = [
   {
     id: 3,
     title: 'Analytics Dashboard',
-    description: 'Real-time analytics dashboard with data visualization, charts, and performance metrics tracking.',
-    tech: ['React', 'Charts', 'Analytics'],
+    description: 'A dashboard application designed to manage and display product data in a structured and user-friendly way.',
+    tech: ['React', 'Vite', 'Context', 'API', 'CSS'],
     image: dashboardImg,
-    viewLink: 'https://products-dashboard-seven-nu.vercel.app',
+    viewLink: 'https://mcrud-board.vercel.app/',
     codeLink: 'https://github.com/muhammedmumu/Simple-Dashboard'
   },
   {
@@ -74,7 +74,7 @@ const projects = [
     description: 'Built a responsive Netflix clone using HTML and CSS, showcasing sleek UI and strong design skills.',
     tech: ['HTML', 'CSS', 'Clone UI'],
     image: netflixImg,
-    viewLink: 'https://netflix-git-main-muhammed-mukrims-projects.vercel.app/',
+    viewLink: 'https://mukrim-netclone.vercel.app/',
     codeLink: 'https://github.com/muhammedmumu/Netflix'
   },
   {
