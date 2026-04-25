@@ -29,7 +29,7 @@ const projects = [
     description: 'Comprehensive admin dashboard with user management, analytics, and control panel features for easy administration.',
     tech: ['React', 'Dashboard', 'Admin'],
     image: adminPanelImg,
-    viewLink: 'https://mu-admin-dashboard.vercel.app',
+    viewLink: 'https://admin-dashboard-ulgt.vercel.app/',
     codeLink: 'https://github.com/Kafeel-Ahamed/Metrial-UI-React'
   },
 
