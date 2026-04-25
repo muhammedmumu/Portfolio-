@@ -105,9 +105,22 @@ const projects = [
 
 ]
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, onCardClick }) {
   return (
-    <div className='group relative overflow-hidden rounded-xl border border-cyan-400/30 bg-gradient-to-br from-slate-800/40 to-slate-900/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-300/80 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2'>
+    <div
+      className='group relative overflow-hidden rounded-xl border border-cyan-400/30 bg-gradient-to-br from-slate-800/40 to-slate-900/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-cyan-300/80 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2'
+      onClick={() => onCardClick({
+        title: project.title,
+        shortDescription: project.description,
+        details: project.description,
+        features: project.tech,
+        technologies: project.tech,
+        links: [
+          project.viewLink ? { label: 'View', url: project.viewLink } : null,
+          project.codeLink ? { label: 'Code', url: project.codeLink } : null,
+        ].filter(Boolean),
+      })}
+    >
       {/* Card background accent */}
       <div className='absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 transition-opacity group-hover:opacity-100' />
 
@@ -150,6 +163,7 @@ function ProjectCard({ project }) {
               target='_blank'
               rel='noreferrer'
               className='rounded-lg bg-[#0099ff] px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-[#0087e0]'
+              onClick={(e) => e.stopPropagation()}
             >
               View
             </a>
@@ -160,6 +174,7 @@ function ProjectCard({ project }) {
               target='_blank'
               rel='noreferrer'
               className='rounded-lg border border-[#ff4700] px-3 py-1.5 text-xs font-semibold text-[#ffb089] transition hover:bg-[#ff4700]/20'
+              onClick={(e) => e.stopPropagation()}
             >
               Code
             </a>
@@ -170,7 +185,7 @@ function ProjectCard({ project }) {
   )
 }
 
-export default function Project() {
+export default function Project({ onCardClick }) {
   return (
     <div
       id='projects'
@@ -190,20 +205,19 @@ export default function Project() {
       <div className='relative z-10 mx-auto max-w-7xl'>
         {/* Section Header */}
         <div className='mb-16 space-y-4 text-center'>
-          <h2 className='text-3xl font-bold text-white sm:text-4xl lg:text-5xl'
+          <h2
+            className='text-3xl font-bold text-white sm:text-4xl lg:text-5xl'
             style={{
               fontFamily: 'Mori, sans-serif',
               fontWeight: 600,
               letterSpacing: '-0.01em',
               lineHeight: 1,
               color: 'black',
-            }}>
+            }}
+          >
             Featured <span className='text-transparent bg-clip-text bg-[#ff4700]'>Projects</span>
           </h2>
-          <p
-            className='mx-auto max-w-2xl text-sm sm:text-base lg:text-lg'
-
-          >
+          <p className='mx-auto max-w-2xl text-sm sm:text-base lg:text-lg'>
             A collection of projects showcasing my skills in web development, design, and problem-solving across frontend and backend technologies.
           </p>
         </div>
@@ -211,10 +225,10 @@ export default function Project() {
         {/* Projects Grid */}
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} onCardClick={onCardClick} />
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }

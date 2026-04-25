@@ -6,6 +6,7 @@ import Experience from './components/pages/Expirence';
 import Project from './components/pages/Project';
 import Contact from './components/pages/Contact';
 import Footer from './components/footer/Footer';
+import Modal from './components/modal/Modal';
 
 export default function Layout() {
   const sections = [
@@ -19,6 +20,15 @@ export default function Layout() {
 
   const [activeSection, setActiveSection] = useState('home')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isModalOpen, setModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState({
+    title: '',
+    shortDescription: '',
+    details: '',
+    features: [],
+    technologies: [],
+    links: [],
+  })
 
   useEffect(() => {
     const sectionElements = sections
@@ -68,9 +78,18 @@ export default function Layout() {
   const leftSections = sections.slice(0, 3)
   const rightSections = sections.slice(3)
 
+  const openModal = (content) => {
+    setModalContent(content)
+    setModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+
   return (
     <div className='overflow-x-hidden'>
-      <nav className='fixed top-0 left-0 z-50 w-full bg-[#ff4700] px-3 py-2 shadow-md sm:px-4 sm:py-3 lg:px-6 lg:py-4'>
+      <nav className='fixed top-0 left-0 z-50 w-full bg-[#ff4700] px-3 py-2 shadow-md sm:px-4 sm:py-3 '>
         <div className='mx-auto max-w-6xl'>
           <div className='relative flex items-center justify-between lg:hidden'>
             <div className='w-10' />
@@ -148,10 +167,40 @@ export default function Layout() {
       <Home />
       <About />
       <SkillsPage />
-      <Experience />
-      <Project />
+      <Experience onCardClick={openModal} />
+      <Project onCardClick={openModal} />
       <Contact />
       <Footer />
+
+      <button onClick={() => openModal({
+        title: 'Sample Project',
+        shortDescription: 'A brief description of the project.',
+        details: 'Detailed information about the project.',
+        features: ['Feature 1', 'Feature 2'],
+        technologies: ['React', 'CSS'],
+        links: [
+          { label: 'Live Demo', url: 'https://example.com' },
+          { label: 'GitHub', url: 'https://github.com' },
+        ],
+      })}>
+        Open Modal
+      </button>
+
+      <div className="project-card" onClick={() => openModal({
+        title: 'Applied Informatic Solution',
+        shortDescription: 'A brief description of the solution.',
+        details: 'Detailed information about the solution.',
+        features: ['Feature A', 'Feature B'],
+        technologies: ['React', 'Node.js'],
+        links: [
+          { label: 'Live Demo', url: 'https://example.com/demo' },
+          { label: 'GitHub', url: 'https://github.com/example' },
+        ],
+      })}>
+        Applied Informatic Solution
+      </div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal} content={modalContent} />
 
     </div>
   )

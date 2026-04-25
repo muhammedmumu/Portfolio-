@@ -5,14 +5,21 @@ import cubeImg from '../../assets/Bg/CubeC.jpg'
 
 const defaultExperienceImages = [brainImg, cubeImg]
 
-function ExperienceCard({ experience, image, index }) {
+function ExperienceCard({ experience, image, index, onCardClick }) {
   const role = experience?.left?.jobTitle ?? 'SOFTWARE ENGINEER'
   const company = experience?.left?.companyName ?? 'Company Name'
   const tools = experience?.left?.tools ?? []
   const summary = experience?.slogan ?? ''
 
   return (
-    <article className='group flex flex-col gap-5'>
+    <article className='group flex flex-col gap-5' onClick={() => onCardClick({
+      title: `${company} - ${role}`,
+      shortDescription: summary,
+      details: experience?.details ?? 'Detailed information about the experience.',
+      features: experience?.features ?? ['Feature 1', 'Feature 2'],
+      technologies: tools,
+      links: experience?.links ?? [],
+    })}>
       <div className='relative overflow-hidden border border-white/20 bg-[#111111] p-4 sm:p-5 lg:p-6'>
         <div className='relative h-40 overflow-hidden border border-white/15 bg-slate-900 sm:h-44 lg:h-52'>
           <img
@@ -49,7 +56,7 @@ function ExperienceCard({ experience, image, index }) {
   )
 }
 
-export default function Experience() {
+export default function Experience({ onCardClick }) {
   return (
     <section id='experience' className='w-screen min-h-screen px-4 py-14 sm:px-6 sm:py-20 lg:px-10 lg:py-24'
       style={{
@@ -70,6 +77,7 @@ export default function Experience() {
               experience={experience}
               image={defaultExperienceImages[index % defaultExperienceImages.length]}
               index={index}
+              onCardClick={onCardClick}
             />
           ))}
         </div>
