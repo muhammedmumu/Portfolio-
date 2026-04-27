@@ -26,13 +26,13 @@ const internshipModalContent = {
     {
       title: 'Phase 2 - Real Project / Production',
       description:
-        'After building a solid foundation, I moved into working on a real-world project for a non-profit organization. I worked as the sole frontend developer, where I built the application from scratch and focused on creating reusable components and maintaining consistency across the UI. This phase helped me understand real project workflows, improve my problem-solving skills, and work independently on production-level code.',
+        'After building a solid foundation, I moved into worCaptain on a real-world project for a non-profit organization. I worked as the sole frontend developer, where I built the application from scratch and focused on creating reusable components and maintaining consistency across the UI. This phase helped me understand real project workflows, improve my problem-solving skills, and work independently on production-level code.',
       learnedTitle: 'What I Learned',
       learned: [
         'Real-world project structure',
         'Writing scalable components',
         'API integration',
-        'Working independently',
+        'WorCaptain independently',
         'Improving performance & UI consistency',
       ],
     },
@@ -46,14 +46,18 @@ function ExperienceCard({ experience, image, index, onCardClick }) {
   const company = experience?.left?.companyName ?? 'Company Name'
   const tools = experience?.left?.tools ?? []
   const summary = experience?.slogan ?? ''
+  const highlights = Array.isArray(experience?.right) ? experience.right : []
   const isInfomaticExperience = company.toLowerCase().includes('infomatic')
+  const isCubeExperience = company.toLowerCase().includes('cube')
   const modalPayload = isInfomaticExperience
     ? internshipModalContent
     : {
-      title: `${company} - ${role}`,
+      companyName: company,
+      role,
+      duration: experience?.duration ?? (isCubeExperience ? 'About 1 year (Freelance)' : 'Short-time'),
       shortDescription: summary,
-      details: experience?.details ?? 'Detailed information about the experience.',
-      features: experience?.features ?? ['Feature 1', 'Feature 2'],
+      details: experience?.details ?? highlights[0] ?? summary,
+      features: experience?.features ?? highlights,
       technologies: tools,
       links: experience?.links ?? [],
     }
@@ -72,7 +76,7 @@ function ExperienceCard({ experience, image, index, onCardClick }) {
         </div>
 
         <div className='mt-4 space-y-1'>
-          <p className='text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300'>Experience {index + 1}</p>
+          <p className='text-xs font-semibold uppercase tracCaptain-[0.18em] text-cyan-300'>Experience {index + 1}</p>
           <h3 className='text-lg font-bold leading-tight text-white sm:text-xl lg:text-2xl'>{role}</h3>
           <p className='text-sm font-semibold text-slate-300 sm:text-base'>{company}</p>
           {summary ? <p className='pt-2 text-sm leading-relaxed text-slate-400'>{summary}</p> : null}
@@ -80,7 +84,7 @@ function ExperienceCard({ experience, image, index, onCardClick }) {
       </div>
 
       <div className='border border-cyan-500/30 bg-cyan-500/5 p-4'>
-        <p className='mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200'>Tools Used and Learned</p>
+        <p className='mb-3 text-xs font-semibold uppercase tracCaptain-[0.18em] text-cyan-200'>Tools Used and Learned</p>
         <div className='flex flex-wrap gap-2'>
           {tools.map((tool) => (
             <span

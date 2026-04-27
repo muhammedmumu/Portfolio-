@@ -26,10 +26,10 @@ const Modal = ({ isOpen, onClose, content }) => {
   if (!isOpen) return null;
 
   const safeContent = content || {};
-  const projectOrCompany = safeContent.projectName || safeContent.companyName || safeContent.title || 'Unnamed Royal Assignment';
-  const role = safeContent.role || safeContent.position || 'Royal Developer';
-  const duration = safeContent.duration || 'Archived in the royal chronicle';
-  const messageFromKing = safeContent.details || safeContent.message || safeContent.shortDescription || 'No decree has been recorded yet.';
+  const projectOrCompany = safeContent.projectName || safeContent.companyName || safeContent.title || '';
+  const role = safeContent.role || safeContent.position || 'Front-end-developer';
+  const duration = safeContent.duration || 'Short-time ';
+  const messageFromCaptain = safeContent.details || safeContent.message || safeContent.shortDescription || 'No decree has been recorded yet.';
   const whatWasDone = Array.isArray(safeContent.features) ? safeContent.features : [];
   const technologies = Array.isArray(safeContent.technologies) ? safeContent.technologies : [];
   const links = Array.isArray(safeContent.links) ? safeContent.links : [];
@@ -44,7 +44,7 @@ const Modal = ({ isOpen, onClose, content }) => {
 
   return (
     <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-container" role="dialog" aria-modal="true" aria-label="Royal Message">
+      <div className="modal-container" role="dialog" aria-modal="true" aria-label="Alert Message !">
         <button className="modal-close" onClick={onClose} aria-label="Close modal">x</button>
 
         <div className="wax-seal" aria-hidden="true">
@@ -57,7 +57,7 @@ const Modal = ({ isOpen, onClose, content }) => {
         <div className="modal-content">
           <header className="royal-header">
             <p className="royal-crown">{'\u265B'}</p>
-            <h2 className="royal-title">Royal Message</h2>
+            <h2 className="royal-title">Alert Message !</h2>
             <div className="royal-divider" />
           </header>
 
@@ -70,8 +70,8 @@ const Modal = ({ isOpen, onClose, content }) => {
           <div className="royal-divider royal-divider-thin" />
 
           <div className="modal-details">
-            <h3>Message from the King</h3>
-            <p>{messageFromKing}</p>
+            <h3>Message from the Captain</h3>
+            <p style={{ whiteSpace: 'pre-line' }}>{messageFromCaptain}</p>
           </div>
 
           {phases.length ? (
@@ -140,7 +140,7 @@ const Modal = ({ isOpen, onClose, content }) => {
           <div className="royal-divider royal-divider-thin" />
 
           <div className="modal-features">
-            <h3>What was done</h3>
+            <h3> What I done </h3>
             <ul>
               {whatWasDone.length ? whatWasDone.map((feature, index) => (
                 <li key={index}>{feature}</li>

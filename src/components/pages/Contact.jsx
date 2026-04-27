@@ -59,7 +59,7 @@ export default function Contact() {
       <div className='relative z-10 mx-auto w-full max-w-7xl'>
         {/* Header Section */}
         <div className='mb-8 text-center sm:mb-10 lg:mb-16 xl:mb-20'>
-          <p className='mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600 sm:text-sm lg:tracking-[0.3em]'>Get In Touch</p>
+          <p className='mb-2 text-xs font-semibold uppercase tracCaptain-[0.2em] text-cyan-600 sm:text-sm lg:tracCaptain-[0.3em]'>Get In Touch</p>
           <h2 className='mb-3 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl'>
             Let's Connect
           </h2>
@@ -99,7 +99,7 @@ export default function Contact() {
 
                   {/* Content */}
                   <div className='flex-1 min-w-0'>
-                    <p className='text-xs font-bold uppercase tracking-[0.12em] text-slate-700 sm:tracking-[0.15em]'>
+                    <p className='text-xs font-bold uppercase tracCaptain-[0.12em] text-slate-700 sm:tracCaptain-[0.15em]'>
                       {method.label}
                     </p>
                     <p className='mt-1 break-all text-sm font-bold text-slate-900 sm:text-base lg:text-lg'>

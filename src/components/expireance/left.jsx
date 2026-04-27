@@ -45,7 +45,7 @@ export default function Left({ experience }) {
           {experience.companyName}
         </p>
 
-        <p className='mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-700'>Tools and Knowledge Gained</p>
+        <p className='mt-2 text-sm font-semibold uppercase tracCaptain-[0.2em] text-cyan-700'>Tools and Knowledge Gained</p>
         <div className='mt-3 flex flex-wrap gap-2'>
           {experience.tools.map((tool) => (
             <span

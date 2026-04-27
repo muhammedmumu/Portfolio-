@@ -7,6 +7,7 @@ import Project from './components/pages/Project';
 import Contact from './components/pages/Contact';
 import Footer from './components/footer/Footer';
 import Modal from './components/modal/Modal';
+import resumePdf from './assets/Resume/Muhammed Mukrim.pdf';
 
 export default function Layout() {
   const sections = [
@@ -123,6 +124,15 @@ export default function Layout() {
                       {section.label}
                     </button>
                   ))}
+                  <a
+                    href={resumePdf}
+                    target='_blank'
+                    rel='noreferrer'
+                    download='Muhammed-Mukrim-Resume.pdf'
+                    className='rounded-xl px-3 py-2 text-slate-700 transition duration-200 hover:bg-slate-100'
+                  >
+                    RESUME
+                  </a>
                 </div>
               </div>
             ) : null}
@@ -159,6 +169,17 @@ export default function Layout() {
                   </button>
                 </li>
               ))}
+              <li>
+                <a
+                  href={resumePdf}
+                  target='_blank'
+                  rel='noreferrer'
+                  download='Muhammed-Mukrim-Resume.pdf'
+                  className='rounded-lg border border-white/40 px-3 py-1.5 font-semibold text-white transition duration-200 hover:bg-white/20'
+                >
+                  RESUME
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -171,34 +192,6 @@ export default function Layout() {
       <Project onCardClick={openModal} />
       <Contact />
       <Footer />
-
-      <button onClick={() => openModal({
-        title: 'Sample Project',
-        shortDescription: 'A brief description of the project.',
-        details: 'Detailed information about the project.',
-        features: ['Feature 1', 'Feature 2'],
-        technologies: ['React', 'CSS'],
-        links: [
-          { label: 'Live Demo', url: 'https://example.com' },
-          { label: 'GitHub', url: 'https://github.com' },
-        ],
-      })}>
-
-      </button>
-
-      <div className="project-card" onClick={() => openModal({
-        title: 'Applied Informatic Solution',
-        shortDescription: 'A brief description of the solution.',
-        details: 'Detailed information about the solution.',
-        features: ['Feature A', 'Feature B'],
-        technologies: ['React', 'Node.js'],
-        links: [
-          { label: 'Live Demo', url: 'https://example.com/demo' },
-          { label: 'GitHub', url: 'https://github.com/example' },
-        ],
-      })}>
-
-      </div>
 
       <Modal isOpen={isModalOpen} onClose={closeModal} content={modalContent} />
 

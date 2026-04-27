@@ -35,7 +35,7 @@ export default function Right() {
 
         <h1 className='text-2xl text-[#FF8B06] font-base text-end mb-5' style={{ fontFamily: 'Cinzel, serif' }}> 👋 Hey, I’m Mukrim </h1>
         <h2 className="text-lg font-normal text-start text-white/90 leading-relaxed">
-          I enjoy building web apps and working on UI design. I like turning ideas into something real and usable.
+          I enjoy building web apps and worCaptain on UI design. I like turning ideas into something real and usable.
           Outside of coding, I love traveling and exploring. I also enjoy writing small moments from my life, turning them into fun videos, and editing them — just something I really enjoy doing.
         </h2>
       </div >

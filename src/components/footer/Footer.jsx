@@ -1,4 +1,5 @@
 import React from 'react'
+import resumePdf from '../../assets/Resume/Muhammed Mukrim.pdf'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -14,7 +15,7 @@ export default function Footer() {
   const contactInfo = [
     { icon: 'fas fa-phone', text: '+91 9677461781' },
     { icon: 'fas fa-envelope', text: 'muhammedmukrim.m@gmail.com' },
-    { icon: 'fas fa-map-marked-alt', text: 'Erode India 638005' },
+    { icon: 'fas fa-map-marked-alt', text: 'Coimbatore,India ' },
   ]
 
   const socialLinks = [
@@ -66,6 +67,16 @@ export default function Footer() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href={resumePdf}
+                target='_blank'
+                rel='noreferrer'
+                download='Muhammed-Mukrim-Resume.pdf'
+                className='flex items-center gap-2 text-sm text-slate-300 transition hover:text-cyan-300'
+              >
+                <i className='fas fa-file-arrow-down'></i>
+                Resume
+              </a>
             </div>
           </div>
 
