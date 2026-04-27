@@ -129,7 +129,7 @@ export default function Layout() {
                     target='_blank'
                     rel='noreferrer'
                     download='Muhammed-Mukrim-Resume.pdf'
-                    className='rounded-xl px-3 py-2 text-slate-700 transition duration-200 hover:bg-slate-100'
+                    className='rounded-xl px-3 py-2  text-slate-700 transition duration-200 hover:bg-slate-100'
                   >
                     RESUME
                   </a>
@@ -175,7 +175,7 @@ export default function Layout() {
                   target='_blank'
                   rel='noreferrer'
                   download='Muhammed-Mukrim-Resume.pdf'
-                  className='rounded-lg border border-white/40 px-3 py-1.5 font-semibold text-white transition duration-200 hover:bg-white/20'
+                  className='rounded-lg border border-white/40 px-3 py-1.5 font-semibold bg-black/50 text-white transition duration-200 hover:bg-white/20'
                 >
                   RESUME
                 </a>
