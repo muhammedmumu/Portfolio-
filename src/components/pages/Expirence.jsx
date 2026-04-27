@@ -7,7 +7,7 @@ const defaultExperienceImages = [brainImg, cubeImg]
 
 const internshipModalContent = {
   companyName: 'Infomatic Solutions',
-  role: 'Software enginerring',
+  role: 'Software Engineering',
   duration: '6 Months Journey',
   details:
     'I started my internship by focusing on building a strong frontend foundation and then progressed to delivering production-level work in a real project environment.',
@@ -26,13 +26,13 @@ const internshipModalContent = {
     {
       title: 'Phase 2 - Real Project / Production',
       description:
-        'After building a solid foundation, I moved into worCaptain on a real-world project for a non-profit organization. I worked as the sole frontend developer, where I built the application from scratch and focused on creating reusable components and maintaining consistency across the UI. This phase helped me understand real project workflows, improve my problem-solving skills, and work independently on production-level code.',
+        'After building a solid foundation, I moved into working on a real-world project for a non-profit organization. I worked as the sole frontend developer, where I built the application from scratch and focused on creating reusable components and maintaining consistency across the UI. This phase helped me understand real project workflows, improve my problem-solving skills, and work independently on production-level code.',
       learnedTitle: 'What I Learned',
       learned: [
         'Real-world project structure',
         'Writing scalable components',
         'API integration',
-        'WorCaptain independently',
+        'Working independently',
         'Improving performance & UI consistency',
       ],
     },
@@ -76,7 +76,7 @@ function ExperienceCard({ experience, image, index, onCardClick }) {
         </div>
 
         <div className='mt-4 space-y-1'>
-          <p className='text-xs font-semibold uppercase tracCaptain-[0.18em] text-cyan-300'>Experience {index + 1}</p>
+          <p className='text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300'>Experience {index + 1}</p>
           <h3 className='text-lg font-bold leading-tight text-white sm:text-xl lg:text-2xl'>{role}</h3>
           <p className='text-sm font-semibold text-slate-300 sm:text-base'>{company}</p>
           {summary ? <p className='pt-2 text-sm leading-relaxed text-slate-400'>{summary}</p> : null}
@@ -84,7 +84,7 @@ function ExperienceCard({ experience, image, index, onCardClick }) {
       </div>
 
       <div className='border border-cyan-500/30 bg-cyan-500/5 p-4'>
-        <p className='mb-3 text-xs font-semibold uppercase tracCaptain-[0.18em] text-cyan-200'>Tools Used and Learned</p>
+        <p className='mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200'>Tools Used and Learned</p>
         <div className='flex flex-wrap gap-2'>
           {tools.map((tool) => (
             <span

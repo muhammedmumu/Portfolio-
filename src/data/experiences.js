@@ -13,7 +13,7 @@ export const experiences = [
       'Improved overall frontend structure and performance for better usability and maintainability.',
       'Developed and maintained responsive admin dashboard interfaces for monitoring and analyzing application data across multiple modules.',
       'Built reusable UI components using React.js and Material UI to ensure consistency and improve development efficiency.',
-      'Implemented data visualization components such as charts and dashboards to enhance data interpretation and decision maCaptain.',
+      'Implemented data visualization components such as charts and dashboards to enhance data interpretation and decision-making.',
       'Optimized frontend performance by refining component structure and rendering behavior.',
       'Collaborated with backend and cross-functional teams to deliver end-to-end product features.',
       'Followed Agile methodologies, including sprint planning, code reviews, and continuous improvements.',
